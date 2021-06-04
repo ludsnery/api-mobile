@@ -13,7 +13,7 @@ mongoose.connection.on('error', (error) => {
     console.log('Database error ' + error)
 })
 
-let port = 3001;
+let port = 80;
 
 const api = require('./routes/api');
 
