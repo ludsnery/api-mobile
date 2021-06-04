@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors')
 const app = express();
 
 mongoose.connect('mongodb+srv://mobilea2:ludmilla@cluster0.gswd2.mongodb.net/deposito?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true});
@@ -16,7 +17,7 @@ mongoose.connection.on('error', (error) => {
 let port = process.env.PORT || 3000;
 
 const api = require('./routes/api');
-
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({
     extended: true
