@@ -14,6 +14,7 @@ router.delete('/bebidas/:id', bebidasController.delete);
 
 router.get('/favorites', favoriteController.findAll);
 router.post('/favorites', favoriteController.store);
+router.delete('/favorites/:id', favoriteController.delete);
 
 
 module.exports = router;

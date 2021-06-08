@@ -24,3 +24,13 @@ exports.store = async (req, res) => {
         throw(e);
     }
 }
+
+
+exports.delete = async (req, res) => {
+    try {
+        await favoritesModel.findByIdAndDelete(req.params.id)
+        res.status(200).send();
+    } catch(e) {
+        throw(e);
+    }
+}
