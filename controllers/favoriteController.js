@@ -11,10 +11,10 @@ exports.findAll = async (req, res) => {
 
 exports.store = async (req, res) => {
     try {
-        const { id } = req.body;
+        const { bebida } = req.body;
 
         const favorite = await favoritesModel.create({
-            bebidas: id,
+            bebida: bebida,
         });
 
         await favorite.save();
