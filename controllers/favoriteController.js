@@ -28,7 +28,7 @@ exports.store = async (req, res) => {
 
 exports.delete = async (req, res) => {
     try {
-        await favoritesModel.findByIdAndDelete(req.params.id)
+        await favoritesModel.findOneAndDelete({ bebidas: req.params.id })
         res.status(200).send();
     } catch(e) {
         throw(e);
