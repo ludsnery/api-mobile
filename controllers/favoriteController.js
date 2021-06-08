@@ -2,7 +2,7 @@ const favoritesModel = require('../models/favorite');
 
 exports.findAll = async (req, res) => {
     try {
-        let results = await favoritesModel.find({}).populate('bebidas');
+        let results = await favoritesModel.find({}).populate('Bebidas');
         res.send(results);
     } catch(e) {
         throw(e);
